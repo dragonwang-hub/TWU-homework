@@ -1,0 +1,7 @@
+myrm()      # 自定义了一个function myrm
+{ 
+    D=/tmp/$(date +%Y%m%d%H%M%S);   #%Y%m%d%H%M%S当前时间 年月日时分秒，D=/tmp/当前时间   代表路径名
+    mkdir -p $D;  #创建D表示的多级目录
+    mv "$@" $D && echo "moved to $D ok";  # $@ 表示在此函数后写的所有参数，即将其移动至刚创建的目录D下，若成功则执行打印出"moved to $D ok"这句语句。
+}
+
